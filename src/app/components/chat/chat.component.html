@@ -1,0 +1,11 @@
+<div id="chat-room-div">
+    User: <input type="text" disabled value="{{username}}">
+    Room: <input type="text" disabled value="{{room}}"><br>
+    <br>
+    <div id="message-texts">
+        <div *ngFor='let item of chats'><strong>{{item.user}}: </strong>{{item.message}}</div>
+    </div>
+    <br>
+    <input type="text" id="message-typing-area" [(ngModel)]="messageText">
+    <button id="send" (click)="sendMessage()">Send</button>
+</div>
