@@ -10,7 +10,8 @@ var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
 // Initialize the app.
-var server = app.listen(process.env.PORT || 443, function () {
+app.set('port', process.env.port || 4000)
+var server = app.listen(4000, function () {
     var port = server.address().port;
     console.log("App now running on port", port);
 });
